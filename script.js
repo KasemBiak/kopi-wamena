@@ -11,10 +11,10 @@ var MENU = [
   {n:"Pisang goreng", d:"Digoreng saat dipesan", p:12, c:"makan"}
 ];
 var PICK = {
-  manis:  {n:"Kopi susu Baliem", t:"Manis legit dari gula aren, pas untuk yang baru mulai minum kopi."},
-  segar:  {n:"V60 Wamena", t:"Segar dan asam tanpa gula dan susu, supaya karakter kopinya berasa."},
-  kuat:   {n:"Kopi tubruk Wamena", t:"Pekat dan kuat dengan cara seduh tradisional, cocok untuk yang sudah terbiasa minum kopi."},
-  ringan: {n:"Teh jahe", t:"Hangat dan menenangkan, cocok untuk yang tidak suka kopi tapi ingin minum sesuatu."}
+  manis:  { n: "Kopi susu Baliem", t: "Manis legit dari gula aren. Pas untuk kamu yang baru mulai mencoba kopi." },
+  segar:  { n: "V60 Wamena", t: "Segar dan asam alami. Disajikan tanpa gula maupun susu agar karakter asli kopinya tetap terasa." },
+  kuat:   { n: "Kopi tubruk Wamena", t: "Pekat dan kuat dengan metode seduh tradisional. Cocok untuk penikmat kopi sejati." },
+  ringan: { n: "Teh jahe", t: "Hangat dan menenangkan. Pilihan tepat buat yang tidak minum kopi tapi tetap ingin bersantai." }
 };
 
 function rupiah(k){ return "Rp" + k + ".000"; }
