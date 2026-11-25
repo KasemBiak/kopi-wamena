@@ -40,19 +40,19 @@ const MENU = [
 
 const PICK = {
   seimbang: {
-    n: "Kopi Arabika Wamena 250g (Biji / Bubuk)",
+    n: "Kopi Arabika Wamena Kraft 250g",
     t: "Pilihan serbaguna untuk diseduh dengan berbagai metode di rumah dan mudah dikirim ke luar daerah."
   },
   segar: {
-    n: "V60 Wamena — Light-Medium Roast",
+    n: "Wamena Pour-Over Edition",
     t: "Cocok jika kamu menyukai kopi dengan keasaman segar, bersih, dan aroma yang menonjol."
   },
   kuat: {
-    n: "Kopi Tubruk Wamena — Medium-Dark Roast",
+    n: "Kopi Wamena Seduh Klasik",
     t: "Pas untuk penikmat kopi pekat dengan sensasi rasa tradisional yang lebih mantap."
   },
   bold: {
-    n: "Espresso Blend Wamena — Bold & Clean",
+    n: "Wamena Espresso Roast",
     t: "Direkomendasikan untuk kamu yang suka karakter kopi tebal dan kuat."
   }
 };
@@ -83,11 +83,12 @@ function renderMenu(cat) {
 
   MENU
     .filter((m) => cat === "semua" || m.c === cat)
-    .forEach((m) => {
+    .forEach((m, index) => {
       const li = document.createElement("li");
       li.className = "menu-item";
+      const loadMode = index === 0 ? "eager" : "lazy";
       li.innerHTML = `
-        <img src="${m.img}" alt="${m.n}" class="menu-thumb" loading="lazy">
+        <img src="${m.img}" alt="${m.n}" class="menu-thumb" loading="${loadMode}" decoding="async">
         <div class="menu-body">
           <div class="menu-head">
             <span class="name">${m.n}</span>
@@ -107,7 +108,37 @@ function renderMenu(cat) {
   });
 }
 
+async function siapkanGambarProduk(daftarMenu) {
+  if (!Array.isArray(daftarMenu) || daftarMenu.length === 0) return;
+
+  const urls = [...new Set(daftarMenu.map((item) => item.img).filter(Boolean))];
+
+  if ("caches" in window) {
+    try {
+      const cache = await caches.open("kopi-wamena-img-v1");
+      await Promise.all(
+        urls.map(async (url) => {
+          const sudahAda = await cache.match(url);
+          if (!sudahAda) {
+            const res = await fetch(url);
+            if (res.ok) await cache.put(url, res);
+          }
+        })
+      );
+    } catch (_) {
+      // Abaikan jika browser membatasi Cache API pada mode tertentu
+    }
+  }
+
+  urls.forEach((url) => {
+    const img = new Image();
+    img.decoding = "async";
+    img.src = url;
+  });
+}
+
 renderMenu("semua");
+siapkanGambarProduk(MENU);
 
 document.querySelectorAll(".tab").forEach((t) => {
   t.addEventListener("click", () => {
