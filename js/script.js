@@ -2,65 +2,79 @@ const WA_NUMBER = "6285244220067";
 
 const MENU = [
   {
-    n: "Espresso Wamena",
-    d: "Shot tunggal arabika Baliem, pekat dan bersih",
-    p: 18,
-    c: "kopi",
-    img: "assets/images/espresso.jpg"
+    n: "Kopi Arabika Wamena Kraft 250g",
+    d: "Kemasan standing pouch berlabel Papua Wamena dengan karakter seimbang untuk seduhan harian",
+    p: 85,
+    c: "kemasan",
+    img: "assets/images/wamena-kraft.jpg"
   },
   {
-    n: "V60 Wamena",
-    d: "Seduhan tangan, terasa segar dan sedikit buah",
-    p: 28,
-    c: "kopi",
-    img: "assets/images/kopi-v60.jpg"
+    n: "Kopi Wamena Reserve Pack + Stok Biji",
+    d: "Kemasan hitam berlabel Papua Wamena yang pas untuk stok biji sangrai maupun kebutuhan kedai",
+    p: 155,
+    c: "kemasan",
+    img: "assets/images/wamena-toples.jpg"
   },
   {
-    n: "Kopi tubruk Wamena",
-    d: "Diseduh tradisional, disajikan dengan ampasnya",
-    p: 15,
-    c: "kopi",
-    img: "assets/images/kopi-tubruk.jpg"
+    n: "Wamena Pour-Over Edition",
+    d: "Dirancang untuk seduhan manual/filter agar karakter rasa dan aromanya tampil lebih bersih dan segar",
+    p: 90,
+    c: "profil",
+    img: "assets/images/wamena-pourover.jpg"
   },
   {
-    n: "Cokelat panas",
-    d: "Cokelat dan susu hangat",
-    p: 20,
-    c: "non",
-    img: "assets/images/coklat.jpg"
+    n: "Kopi Wamena Seduh Klasik",
+    d: "Karakter rasa lebih pekat dan hangat, cocok untuk seduhan tubruk atau gelas harian",
+    p: 85,
+    c: "profil",
+    img: "assets/images/wamena-tubruk.jpg"
   },
   {
-    n: "Teh jahe",
-    d: "Diseduh dengan jahe segar",
-    p: 15,
-    c: "non",
-    img: "assets/images/jahe.jpg"
-  },
-  {
-    n: "Ubi bakar",
-    d: "Ubi manis dibakar, teman minum kopi",
-    p: 12,
-    c: "makan",
-    img: "assets/images/ubi-bakar.jpg"
-  },
-  {
-    n: "Pisang goreng",
-    d: "Digoreng saat dipesan",
-    p: 12,
-    c: "makan",
-    img: "assets/images/pisang-goreng.jpg"
+    n: "Wamena Espresso Roast",
+    d: "Sangrai dengan profil bold dan rasa kuat untuk espresso, moka pot, atau kopi susu racikan sendiri",
+    p: 95,
+    c: "profil",
+    img: "assets/images/wamena-espresso.jpg"
   }
 ];
 
 const PICK = {
-  manis: { n: "Kopi susu Baliem", t: "Manis legit dari gula aren, pas untuk yang baru mulai minum kopi." },
-  segar: { n: "V60 Wamena", t: "Segar dan asam tanpa gula dan susu, supaya karakter kopinya berasa." },
-  kuat: { n: "Kopi tubruk Wamena", t: "Pekat dan kuat dengan cara seduh tradisional, cocok untuk yang sudah terbiasa minum kopi." },
-  ringan: { n: "Teh jahe", t: "Hangat dan menenangkan, cocok untuk yang tidak suka kopi tapi ingin minum sesuatu." }
+  seimbang: {
+    n: "Kopi Arabika Wamena 250g (Biji / Bubuk)",
+    t: "Pilihan serbaguna untuk diseduh dengan berbagai metode di rumah dan mudah dikirim ke luar daerah."
+  },
+  segar: {
+    n: "V60 Wamena — Light-Medium Roast",
+    t: "Cocok jika kamu menyukai kopi dengan keasaman segar, bersih, dan aroma yang menonjol."
+  },
+  kuat: {
+    n: "Kopi Tubruk Wamena — Medium-Dark Roast",
+    t: "Pas untuk penikmat kopi pekat dengan sensasi rasa tradisional yang lebih mantap."
+  },
+  bold: {
+    n: "Espresso Blend Wamena — Bold & Clean",
+    t: "Direkomendasikan untuk kamu yang suka karakter kopi tebal dan kuat."
+  }
 };
 
 function rupiah(k) {
   return "Rp" + k + ".000";
+}
+
+function arahkanKePesan(namaProduk) {
+  const inputPesan = document.getElementById("pesan");
+  const inputNama = document.getElementById("nama");
+  const bagianKontak = document.getElementById("kontak");
+
+  if (inputPesan) {
+    inputPesan.value = `1 ${namaProduk}`;
+  }
+  if (bagianKontak) {
+    bagianKontak.scrollIntoView({ behavior: "smooth" });
+  }
+  if (inputNama) {
+    setTimeout(() => inputNama.focus(), 350);
+  }
 }
 
 function renderMenu(cat) {
@@ -71,9 +85,26 @@ function renderMenu(cat) {
     .filter((m) => cat === "semua" || m.c === cat)
     .forEach((m) => {
       const li = document.createElement("li");
-      li.innerHTML = `<span class="name">${m.n}<span class="desc">${m.d}</span></span><span class="price">${rupiah(m.p)}</span>`;
+      li.className = "menu-item";
+      li.innerHTML = `
+        <img src="${m.img}" alt="${m.n}" class="menu-thumb" loading="lazy">
+        <div class="menu-body">
+          <div class="menu-head">
+            <span class="name">${m.n}</span>
+            <span class="price">${rupiah(m.p)}</span>
+          </div>
+          <span class="desc">${m.d}</span>
+          <button type="button" class="btn btn-sm pesan-btn" data-produk="${m.n}">Pesan sekarang</button>
+        </div>
+      `;
       list.appendChild(li);
     });
+
+  list.querySelectorAll(".pesan-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      arahkanKePesan(btn.dataset.produk);
+    });
+  });
 }
 
 renderMenu("semua");
@@ -91,7 +122,15 @@ document.querySelectorAll(".chip").forEach((c) => {
     document.querySelectorAll(".chip").forEach((x) => x.setAttribute("aria-pressed", "false"));
     c.setAttribute("aria-pressed", "true");
     const r = PICK[c.dataset.taste];
-    document.getElementById("result").innerHTML = `<strong>${r.n}</strong>${r.t}`;
+    const resultEl = document.getElementById("result");
+    resultEl.innerHTML = `
+      <strong>${r.n}</strong>
+      <p>${r.t}</p>
+      <button type="button" class="btn btn-sm" id="pesanRekomendasi">Pesan varian ini</button>
+    `;
+    document.getElementById("pesanRekomendasi").addEventListener("click", () => {
+      arahkanKePesan(r.n);
+    });
   });
 });
 

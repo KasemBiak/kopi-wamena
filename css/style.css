@@ -38,6 +38,7 @@ nav a:hover{text-decoration:underline;text-decoration-thickness:2px;text-underli
 .btn{display:inline-block;background:var(--ink);color:var(--white);padding:14px 26px;font:inherit;font-weight:700;text-decoration:none;border:2px solid var(--ink);border-radius:6px;cursor:pointer}
 .btn:hover{background:var(--saffron);color:var(--ink)}
 .btn.alt{background:transparent;color:var(--ink);margin-left:10px}
+.btn-sm{padding:8px 16px;font-size:.9rem;margin-top:12px}
 
 /* Picker */
 .picker{background:var(--teal);color:var(--white);padding:56px 0}
@@ -46,18 +47,23 @@ nav a:hover{text-decoration:underline;text-decoration-thickness:2px;text-underli
 .chip{background:transparent;color:var(--white);border:2px solid var(--white);padding:10px 20px;border-radius:40px;font:inherit;font-weight:500;cursor:pointer}
 .chip[aria-pressed="true"]{background:var(--saffron);border-color:var(--saffron);color:var(--ink);font-weight:700}
 .result{background:var(--white);color:var(--ink);padding:22px;border-radius:8px;max-width:520px;min-height:96px}
-.result strong{font-family:var(--display);font-size:1.4rem;display:block}
+.result strong{font-family:var(--display);font-size:1.35rem;display:block;margin-bottom:4px}
 
-/* Menu & About */
+/* Katalog Kopi */
 .tabs{display:flex;gap:8px;margin:20px 0 28px;flex-wrap:wrap}
 .tab{background:transparent;border:2px solid var(--ink);padding:8px 18px;border-radius:40px;font:inherit;font-weight:500;cursor:pointer}
 .tab[aria-selected="true"]{background:var(--ink);color:var(--white)}
-.menu{list-style:none;max-width:680px}
-.menu li{display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid var(--ink)}
-.menu .name{font-weight:700}
-.menu .desc{display:block;font-weight:400;font-size:.93rem;color:#44524f}
+
+.menu{list-style:none;max-width:780px;display:grid;gap:16px}
+.menu-item{display:flex;gap:18px;align-items:center;background:var(--white);padding:14px;border:1px solid var(--ink);border-radius:8px}
+.menu-thumb{width:104px;height:104px;object-fit:cover;border-radius:6px;flex-shrink:0;background:var(--mist)}
+.menu-body{flex:1;min-width:0}
+.menu-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.menu .name{font-weight:700;font-size:1.05rem}
+.menu .desc{display:block;font-weight:400;font-size:.93rem;color:#44524f;margin-top:4px}
 .menu .price{font-weight:700;white-space:nowrap}
 
+/* About */
 .about{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
 .facts{background:var(--mist);padding:26px;border-radius:8px}
 .facts dt{font-weight:700}
@@ -96,7 +102,9 @@ footer{text-align:center;padding:24px;font-size:.9rem}
   .hero h1{font-size:clamp(2.3rem,13vw,3.2rem)}
   .btn,.btn.alt{display:block;width:100%;text-align:center;margin:0 0 12px}
   .tabs,.choices{gap:8px}
-  .menu li{flex-direction:column;gap:4px}
+  .menu-item{flex-direction:column;align-items:flex-start}
+  .menu-thumb{width:100%;height:180px}
+  .menu-head{width:100%}
   .result{padding:18px}
 }
 
