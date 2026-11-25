@@ -2,29 +2,29 @@ const WA_NUMBER = "6285244220067";
 
 const MENU = [
   {
-    n: "Kopi Arabika Wamena Kraft 250g",
-    d: "Kemasan standing pouch berlabel Papua Wamena dengan karakter seimbang untuk seduhan harian",
+    n: "Kopi Arabika Wamena Kraft (250g)",
+    d: "Kemasan standing pouch dengan karakter seimbang untuk seduhan harian",
     p: 85,
     c: "kemasan",
     img: "assets/img/wamena-kraft.jpg"
   },
   {
-    n: "Kopi Wamena Reserve Pack + Stok Biji",
-    d: "Kemasan hitam berlabel Papua Wamena yang pas untuk stok biji sangrai maupun kebutuhan kedai",
+    n: "Kopi Arabika Wamena Reserve Pack (500g)",
+    d: "Kemasan dengan isi lebih banyak, cocok untuk stok kopi harian di rumah atau untuk dibagikan ke teman dan keluarga",
     p: 155,
     c: "kemasan",
     img: "assets/img/wamena-toples.jpg"
   },
   {
     n: "Wamena Pour-Over Edition",
-    d: "Dirancang untuk seduhan manual/filter agar karakter rasa dan aromanya tampil lebih bersih dan segar",
+    d: "Dirancang untuk seduhan manual atau filter agar karakter rasa dan aromanya tampil lebih bersih dan segar",
     p: 90,
     c: "profil",
     img: "assets/img/wamena-pourover.jpg"
   },
   {
     n: "Kopi Wamena Seduh Klasik",
-    d: "Karakter rasa lebih pekat dan hangat, cocok untuk seduhan tubruk atau gelas harian",
+    d: "Karakter rasa lebih pekat dan hangat, cocok untuk seduhan tubruk",
     p: 85,
     c: "profil",
     img: "assets/img/wamena-tubruk.jpg"
@@ -40,7 +40,7 @@ const MENU = [
 
 const PICK = {
   seimbang: {
-    n: "Kopi Arabika Wamena Kraft 250g",
+    n: "Kopi Arabika Wamena Kraft (250g)",
     t: "Pilihan serbaguna untuk diseduh dengan berbagai metode di rumah dan mudah dikirim ke luar daerah."
   },
   segar: {
