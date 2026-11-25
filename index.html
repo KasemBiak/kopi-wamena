@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kopi Wamena - Arabika dari Lembah Baliem, Papua</title>
+<meta name="description" content="Kopi Wamena: kopi arabika dari Lembah Baliem, Papua. Kenali ceritanya, lihat menu, dan pesan lewat WhatsApp.">
+<meta name="keywords" content="kopi wamena, kopi papua, kopi baliem, arabika papua, kopi lokal">
+<meta property="og:title" content="Kopi Wamena">
+<meta property="og:description" content="Arabika dari Lembah Baliem, Papua. Kenali ceritanya dan pesan lewat WhatsApp.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#beranda">Kopi Wamena</a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav" aria-label="Navigasi utama">
+      <ul>
+        <li><a href="#cerita">Cerita</a></li>
+        <li><a href="#cari">Cari kopimu</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#tentang">Tentang</a></li>
+        <li><a href="#kontak">Pesan</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="beranda">
+    <div class="wrap">
+      <h1>Kopi dari Lembah Baliem.</h1>
+      <p>Arabika yang tumbuh di dataran tinggi Wamena, Papua, dipetik petani setempat dan disangrai dalam jumlah kecil agar rasanya tetap segar.</p>
+      <a class="btn" href="#cerita">Kenali Kopi Wamena</a>
+      <a class="btn alt" href="#menu">Lihat menu</a>
+    </div>
+  </section>
+
+  <section class="section section-light" id="cerita">
+    <div class="wrap about">
+      <div>
+        <h2>Kenapa Kopi Wamena?</h2>
+        <p>Wamena berada di Lembah Baliem, wilayah pegunungan di Papua. Udara sejuk dan tanah dataran tinggi cocok untuk menanam kopi arabika, yang umumnya dikelola petani dalam kebun kecil.</p>
+        <p class="mt-14">Di halaman ini kamu bisa mengenal kopinya, memilih sajian sesuai selera, lalu memesan langsung.</p>
+      </div>
+      <dl class="facts">
+        <dt>Jenis</dt><dd>Arabika</dd>
+        <dt>Daerah</dt><dd>Lembah Baliem, Wamena</dd>
+        <dt>Cara tanam</dt><dd>Kebun petani skala kecil</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="picker" id="cari">
+    <div class="wrap">
+      <h2>Kamu suka rasa yang mana?</h2>
+      <p>Pilih satu, kami carikan sajian Kopi Wamena yang cocok.</p>
+      <div class="choices" role="group" aria-label="Pilih selera">
+        <button class="chip" data-taste="manis" aria-pressed="false">Manis</button>
+        <button class="chip" data-taste="segar" aria-pressed="false">Segar dan asam</button>
+        <button class="chip" data-taste="kuat" aria-pressed="false">Kuat dan pahit</button>
+        <button class="chip" data-taste="ringan" aria-pressed="false">Tanpa kopi</button>
+      </div>
+      <div class="result" id="result" aria-live="polite">Pilih selera di atas untuk melihat rekomendasi.</div>
+    </div>
+  </section>
+
+  <section class="section" id="menu">
+    <div class="wrap">
+      <h2>Contoh sajian</h2>
+      <p>Berikut beberapa pilihan sajian kopi Wamena yang bisa kamu coba.</p>
+      <div class="tabs" role="tablist" aria-label="Kategori menu">
+        <button class="tab" role="tab" data-cat="semua" aria-selected="true">Semua</button>
+        <button class="tab" role="tab" data-cat="kopi" aria-selected="false">Kopi</button>
+        <button class="tab" role="tab" data-cat="non" aria-selected="false">Non-kopi</button>
+        <button class="tab" role="tab" data-cat="makan" aria-selected="false">Camilan</button>
+      </div>
+      <ul class="menu" id="menuList"></ul>
+    </div>
+  </section>
+
+  <section class="section section-light" id="tentang">
+    <div class="wrap about">
+      <div>
+        <h2>Tentang proyek ini</h2>
+        <p>Website ini dikembangkan sebagai etalase digital bertema Kopi Wamena sekaligus bagian dari rencana pengembangan produk dan pemasukan berbasis web.</p>
+        <p class="mt-14">Seluruh alur informasi dan pemesanan diarahkan ke kanal kontak yang dikelola langsung sesuai rencana operasional yang dirancang.</p>
+      </div>
+      <dl class="facts">
+        <dt>Asal Kopi</dt><dd>Lembah Baliem, Wamena, Papua</dd>
+        <dt>Kontak pemesanan</dt>
+        <dd>
+          <a id="aboutWaLink" href="https://wa.me/628XXXXXXXXXX" target="_blank" rel="noopener">WhatsApp 08XX-XXXX-XXXX</a><br>
+          <a href="mailto:emailkamu@contoh.com">emailkamu@contoh.com</a>
+        </dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section contact" id="kontak">
+    <div class="wrap">
+      <h2>Ingin memesan?</h2>
+      <p>Isi formulir, lalu pesanmu terkirim lewat WhatsApp untuk proses pemesanan dan konfirmasi lebih lanjut.</p>
+      <form id="orderForm">
+        <label>Nama<input id="nama" required autocomplete="name"></label>
+        <label>Pesanan<textarea id="pesan" rows="3" required placeholder="Contoh: 2 Kopi susu Baliem, 1 Ubi bakar"></textarea></label>
+        <button class="btn" type="submit">Kirim ke WhatsApp</button>
+      </form>
+      <ul class="kontak-list">
+        <li>WhatsApp: <a id="contactWaLink" href="https://wa.me/628XXXXXXXXXX" target="_blank" rel="noopener">08XX-XXXX-XXXX</a></li>
+        <li>Email: <a href="mailto:emailkamu@contoh.com">emailkamu@contoh.com</a></li>
+        <li>Live Demo: <a href="https://kasembiak.github.io/kopi-wamena/" target="_blank" rel="noopener">kasembiak.github.io/kopi-wamena</a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>© 2026 Kopi Wamena.</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
