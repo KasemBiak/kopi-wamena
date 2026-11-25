@@ -6,35 +6,35 @@ const MENU = [
     d: "Kemasan standing pouch berlabel Papua Wamena dengan karakter seimbang untuk seduhan harian",
     p: 85,
     c: "kemasan",
-    img: "assets/images/wamena-kraft.jpg"
+    img: "assets/img/wamena-kraft.jpg"
   },
   {
     n: "Kopi Wamena Reserve Pack + Stok Biji",
     d: "Kemasan hitam berlabel Papua Wamena yang pas untuk stok biji sangrai maupun kebutuhan kedai",
     p: 155,
     c: "kemasan",
-    img: "assets/images/wamena-toples.jpg"
+    img: "assets/img/wamena-toples.jpg"
   },
   {
     n: "Wamena Pour-Over Edition",
     d: "Dirancang untuk seduhan manual/filter agar karakter rasa dan aromanya tampil lebih bersih dan segar",
     p: 90,
     c: "profil",
-    img: "assets/images/wamena-pourover.jpg"
+    img: "assets/img/wamena-pourover.jpg"
   },
   {
     n: "Kopi Wamena Seduh Klasik",
     d: "Karakter rasa lebih pekat dan hangat, cocok untuk seduhan tubruk atau gelas harian",
     p: 85,
     c: "profil",
-    img: "assets/images/wamena-tubruk.jpg"
+    img: "assets/img/wamena-tubruk.jpg"
   },
   {
     n: "Wamena Espresso Roast",
     d: "Sangrai dengan profil bold dan rasa kuat untuk espresso, moka pot, atau kopi susu racikan sendiri",
     p: 95,
     c: "profil",
-    img: "assets/images/wamena-espresso.jpg"
+    img: "assets/img/wamena-espresso.jpg"
   }
 ];
 
