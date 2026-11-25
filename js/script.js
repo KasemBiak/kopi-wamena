@@ -1,14 +1,55 @@
 const WA_NUMBER = "6285244220067";
 
 const MENU = [
-  { n: "Espresso Wamena", d: "Shot tunggal arabika Baliem, pekat dan bersih", p: 18, c: "kopi" },
-  { n: "Kopi susu Baliem", d: "Espresso Wamena, susu segar, gula aren cair", p: 24, c: "kopi" },
-  { n: "V60 Wamena", d: "Seduhan tangan, terasa segar dan sedikit buah", p: 28, c: "kopi" },
-  { n: "Kopi tubruk Wamena", d: "Diseduh tradisional, disajikan dengan ampasnya", p: 15, c: "kopi" },
-  { n: "Cokelat panas", d: "Cokelat dan susu hangat", p: 20, c: "non" },
-  { n: "Teh jahe", d: "Diseduh dengan jahe segar", p: 15, c: "non" },
-  { n: "Ubi bakar", d: "Ubi manis dibakar, teman minum kopi", p: 12, c: "makan" },
-  { n: "Pisang goreng", d: "Digoreng saat dipesan", p: 12, c: "makan" }
+  {
+    n: "Espresso Wamena",
+    d: "Shot tunggal arabika Baliem, pekat dan bersih",
+    p: 18,
+    c: "kopi",
+    img: "assets/images/espresso.jpg"
+  },
+  {
+    n: "V60 Wamena",
+    d: "Seduhan tangan, terasa segar dan sedikit buah",
+    p: 28,
+    c: "kopi",
+    img: "assets/images/kopi-v60.jpg"
+  },
+  {
+    n: "Kopi tubruk Wamena",
+    d: "Diseduh tradisional, disajikan dengan ampasnya",
+    p: 15,
+    c: "kopi",
+    img: "assets/images/kopi-tubruk.jpg"
+  },
+  {
+    n: "Cokelat panas",
+    d: "Cokelat dan susu hangat",
+    p: 20,
+    c: "non",
+    img: "assets/images/coklat.jpg"
+  },
+  {
+    n: "Teh jahe",
+    d: "Diseduh dengan jahe segar",
+    p: 15,
+    c: "non",
+    img: "assets/images/jahe.jpg"
+  },
+  {
+    n: "Ubi bakar",
+    d: "Ubi manis dibakar, teman minum kopi",
+    p: 12,
+    c: "makan",
+    img: "assets/images/ubi-bakar.jpg"
+  },
+  {
+    n: "Pisang goreng",
+    d: "Digoreng saat dipesan",
+    p: 12,
+    c: "makan",
+    img: "assets/images/pisang-goreng.jpg"
+  }
 ];
 
 const PICK = {
